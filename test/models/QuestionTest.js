@@ -69,27 +69,28 @@ describe('Question', () => {
     });
   });
 
-  describe('insert()', function(){
+  describe('update()', function(){
     it('is a function',  function(){
       const question = new Question("Where in the world is Carmen Sandiego?")
-      expect(question.insert).to.be.a('function');
+      expect(question.update).to.be.a('function');
     });
 
     it("returns a promise", function(){
       const question = new Question("Where in the world is Carmen Sandiego?")
-      const questionInsertPromise = question.insert()
+      const questionInsertPromise = question.update()
 
       expect(questionInsertPromise).to.be.an.instanceOf(Promise);
     })
 
-    it("inserts the row into the database", function(done){
+    it("updates the row in the database", function(done){
       const question = new Question("Where in the world is Carmen Sandiego?")
       question.insert()
+      question.update("This is the new content.")
 
-      db.get("SELECT * FROM questions WHERE content = 'Where in the world is Carmen Sandiego?'", function(err, result){
+      db.get("SELECT * FROM questions WHERE content = 'This is the new content.'", function(err, result){
         try{
           expect(result.content).to.not.be.undefined
-          expect(result.content).to.eql("Where in the world is Carmen Sandiego?");
+          expect(result.content).to.eql("This is the new content.");
           done()
         } catch(err){
           expect.fail(err, undefined, err.message)
@@ -97,27 +98,5 @@ describe('Question', () => {
       })
     })
 
-    it("sets the id of the instance based on the primary key", function(done){
-      const question = new Question("Where in the world is Carmen Sandiego?")
-      question.insert()
-
-      db.get("SELECT * FROM questions WHERE content = 'Where in the world is Carmen Sandiego?'", function(err, result){
-        try{
-          expect(result.id).to.not.be.undefined
-          expect(question.id).to.not.be.undefined
-          expect(question.id).to.eql(result.id)
-          done()
-        } catch(err){
-          expect.fail(err, undefined, err.message)
-        }
-      })
-    })
-
-    it("returns the instance as the resolution of the promise", async function(){
-      const question = new Question("Where in the world is Carmen Sandiego?")
-      const returnedQuestion = await question.insert()
-
-      expect(returnedQuestion).to.eql(question)
-    })
   })
 });

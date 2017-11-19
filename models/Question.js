@@ -18,6 +18,28 @@ class Question{
     this.content = content
   }
 
+  insert(){
+    const self = this // THIS IS THE CRUX
+    const sql = `INSERT INTO questions (content) VALUES (?)`
+    return new Promise(function(resolve){
+      db.run(sql, [self.content], function(err, result){
+        self.id = this.lastID
+        resolve(self)      
+      })
+    })
+  }
+
+  update(newContent){
+    const self = this // THIS IS THE CRUX
+    self.content = newContent
+    const sql = `UPDATE questions SET content = (?)`
+    return new Promise(function(resolve){
+      db.run(sql, [self.content], function(err, result){
+        self.id = this.lastID
+        resolve(self)      
+      })
+    })
+  }
 }
 
 module.exports = Question;
