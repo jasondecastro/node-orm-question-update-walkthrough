@@ -1,0 +1,18 @@
+{
+  "name": "node-orm-question-migration-walkthrough",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "test": "mocha -R mocha-multi --reporter-options spec=-,json=.results.json"
+  },
+  "dependencies": {
+    "debug": "~2.6.9",
+    "mocha-multi": "^0.11.1",
+    "pryjs": "^1.0.3",
+    "sqlite3": "^3.1.13"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^4.0.1"
+  }
+}
