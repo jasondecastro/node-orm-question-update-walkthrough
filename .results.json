@@ -5,15 +5,15 @@
     "passes": 7,
     "pending": 0,
     "failures": 0,
-    "start": "2017-11-19T23:49:50.889Z",
-    "end": "2017-11-19T23:49:50.916Z",
-    "duration": 27
+    "start": "2017-11-19T23:52:21.931Z",
+    "end": "2017-11-19T23:52:21.955Z",
+    "duration": 24
   },
   "tests": [
     {
       "title": "is a static class function",
       "fullTitle": "Question as a class .CreateTable() is a static class function",
-      "duration": 2,
+      "duration": 1,
       "currentRetry": 0,
       "err": {}
     },
@@ -27,14 +27,14 @@
     {
       "title": "creates a new table in the database named 'questions'",
       "fullTitle": "Question as a class .CreateTable() creates a new table in the database named 'questions'",
-      "duration": 0,
+      "duration": 1,
       "currentRetry": 0,
       "err": {}
     },
     {
       "title": "adds 'id' and 'content' columns to the 'questions' table",
       "fullTitle": "Question as a class .CreateTable() adds 'id' and 'content' columns to the 'questions' table",
-      "duration": 1,
+      "duration": 0,
       "currentRetry": 0,
       "err": {}
     },
@@ -55,7 +55,7 @@
     {
       "title": "updates the row in the database",
       "fullTitle": "Question update() updates the row in the database",
-      "duration": 3,
+      "duration": 2,
       "currentRetry": 0,
       "err": {}
     }
@@ -66,7 +66,7 @@
     {
       "title": "is a static class function",
       "fullTitle": "Question as a class .CreateTable() is a static class function",
-      "duration": 2,
+      "duration": 1,
       "currentRetry": 0,
       "err": {}
     },
@@ -80,14 +80,14 @@
     {
       "title": "creates a new table in the database named 'questions'",
       "fullTitle": "Question as a class .CreateTable() creates a new table in the database named 'questions'",
-      "duration": 0,
+      "duration": 1,
       "currentRetry": 0,
       "err": {}
     },
     {
       "title": "adds 'id' and 'content' columns to the 'questions' table",
       "fullTitle": "Question as a class .CreateTable() adds 'id' and 'content' columns to the 'questions' table",
-      "duration": 1,
+      "duration": 0,
       "currentRetry": 0,
       "err": {}
     },
@@ -108,7 +108,7 @@
     {
       "title": "updates the row in the database",
       "fullTitle": "Question update() updates the row in the database",
-      "duration": 3,
+      "duration": 2,
       "currentRetry": 0,
       "err": {}
     }

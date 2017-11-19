@@ -31,10 +31,9 @@ class Question{
 
   update(newContent){
     const self = this // THIS IS THE CRUX
-    self.content = newContent
     const sql = `UPDATE questions SET content = (?)`
     return new Promise(function(resolve){
-      db.run(sql, [self.content], function(err, result){
+      db.run(sql, [newContent], function(err, result){
         self.id = this.lastID
         resolve(self)      
       })
